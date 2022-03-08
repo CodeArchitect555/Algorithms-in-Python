@@ -1,19 +1,28 @@
-def selection_sort(list_a):
-    indexing_length = range(0,len(list_a)-1)
+def selection_sort(nums):
+    for i in range(5):
+        minpos = i
+        print(minpos)
+        for j in range(i,6):
+            if nums[j] < nums[minpos]:
+                minpos = j    
+        temp = nums[i]
+        nums[i] = nums[minpos]
+        nums[minpos] = temp
+        print(nums)
 
-                  
-    for i in indexing_length:
-        min_value = i
-        for j in range(i+1, len(list_a)):
-            if list_a[j] < list_a[min_value]:
-                min_value = j
-        
-        if min_value != i:
-            list_a[min_value], list_a[i] = list_a[i], list_a[min_value]
-    
-    return list_a
-    
-my_list = [2,1,7,5,3,1,9,5,7,8]
-           
-print (my_list)
-print(selection_sort(my_list ))
+list_a = [5,3,7,4,8,0]
+selection_sort(list_a)
+
+def better_selection_sort(nums):
+    for i in range(0,len(nums)-1):
+        minpos = i
+        for j in range(i,len(nums)):
+            if nums[j] < nums[minpos]:
+                minpos = j
+        temp = nums[i]
+        nums[i] = nums[minpos]
+        nums[minpos] = temp
+        print(nums)
+
+list_b = [7,9,8,5,3,6,8,9,2,4,9,10,2,3,5,6]
+better_selection_sort(list_b)        
